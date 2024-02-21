@@ -1,0 +1,35 @@
+%ћэpи любит пеpсики. ћэpи любит кукуpузу. ћэpи любит
+%€блоки. Ѕет любит то, что любит ћэpи, если это Ч фpукт
+%и если он кpасный. Ѕет любит то, что любит ћэpи, если
+%это кукуpуза. ѕеpсики Ч фpукт. яблоки Ч фрукт. ÷вет
+%пеpсиков желтый. ÷вет апельсинов оpанжевый. ÷вет €блок
+%кpасный. ÷вет €блок желтый.
+fruit(peach).
+fruit(apple).
+fruit(orange).
+vegetable(corn).
+
+color(peach, yellow).
+color(apple, red).
+color(apple, yellow).
+color(orange, orange).
+
+likes(mary, peach).
+likes(mary, corn).
+likes(mary, apple).
+
+likes(beth, X) :- likes(mary, X), fruit(X), color(X, red).
+likes(beth, corn) :- likes(mary,corn).
+
+%«апросы:
+%Х „то любит Ѕет?
+%Х Ћюбит ли ћэpи кукуpузу?
+%Х  акие фpукты известны?
+%Х  акого цвета фpукты, котоpые люб€т Ѕет и ћэpи?
+%
+?- likes(beth, What).
+?- likes(mary, corn).
+?- fruit(Fruit).
+?- likes(mary, Fruit),
+likes(beth, Fruit),
+color(Fruit, Color).
